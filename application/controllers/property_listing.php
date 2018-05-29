@@ -26,7 +26,26 @@ class Property_Listing extends CI_Controller {
 
         if($_POST!=null)
         {
-            print_r($_POST);die();
+
+            $propertyName = $this->input->post('name');
+            $propertydescription = $this->input->post('description');
+            $propertytype = $this->input->post('type');
+            $propertyfloor = $this->input->post('floor');
+            $minimumstay = $this->input->post('minimum_stay');
+            $addedon = $this->input->post('added_on');
+            $availablefrom = $this->input->post('available_from');
+
+            $propertyAddObject = new Property();
+            $propertyAddObject->property_name=$propertyName;
+            $propertyAddObject->description=$propertydescription;
+            $propertyAddObject->type=$propertytype;
+            $propertyAddObject->floor=$propertyfloor;
+            $propertyAddObject->minimum_stay=$minimumstay;
+            $propertyAddObject->added_on=$addedon;
+            $propertyAddObject->available_from=$availablefrom;
+
+            $propertyAddObject->save();
+            
         }
     }
 	

@@ -80,7 +80,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="description" placeholder="" data-validation="required">
+                                                <textarea  rows="7" cols="50" name=""description"></textarea>
                                             </div>
                                         </div>
 
@@ -125,7 +125,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="date" class="form-control" name="available_form" placeholder="" data-validation="required">
+                                                <input type="date" class="form-control" name="available_from" placeholder="" data-validation="required">
                                             </div>
                                         </div>
 
