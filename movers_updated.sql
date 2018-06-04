@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 29, 2018 at 01:03 PM
+-- Generation Time: Jun 04, 2018 at 11:42 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -178,7 +178,16 @@ INSERT INTO `property` (`property_id`, `property_name`, `type`, `floor`, `minimu
 (7, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
 (8, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
 (9, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
-(10, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', '');
+(10, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
+(11, 'xvcxzc', '1', '3', 6, '1986-05-03', '2001-05-03', '', ''),
+(12, 'test property', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(13, 'test property', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(14, 'test property', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(15, 'test property', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(16, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
+(17, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
+(18, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
+(19, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', '');
 
 -- --------------------------------------------------------
 
@@ -240,7 +249,11 @@ INSERT INTO `property_amenities` (`property_id`, `amenities_id`) VALUES
 (10, 2),
 (10, 3),
 (10, 4),
-(10, 5);
+(10, 5),
+(19, 1),
+(19, 2),
+(19, 3),
+(19, 4);
 
 -- --------------------------------------------------------
 
@@ -249,7 +262,7 @@ INSERT INTO `property_amenities` (`property_id`, `amenities_id`) VALUES
 --
 
 CREATE TABLE `property_bills` (
-  `properties_id` int(11) NOT NULL,
+  `property_id` int(11) NOT NULL,
   `bills_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -257,11 +270,14 @@ CREATE TABLE `property_bills` (
 -- Dumping data for table `property_bills`
 --
 
-INSERT INTO `property_bills` (`properties_id`, `bills_id`) VALUES
+INSERT INTO `property_bills` (`property_id`, `bills_id`) VALUES
 (10, 1),
 (10, 2),
 (10, 3),
-(10, 0);
+(10, 0),
+(19, 0),
+(19, 0),
+(19, 0);
 
 -- --------------------------------------------------------
 
@@ -270,7 +286,7 @@ INSERT INTO `property_bills` (`properties_id`, `bills_id`) VALUES
 --
 
 CREATE TABLE `property_rules` (
-  `properties_id` int(11) NOT NULL,
+  `property_id` int(11) NOT NULL,
   `rules_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -278,11 +294,13 @@ CREATE TABLE `property_rules` (
 -- Dumping data for table `property_rules`
 --
 
-INSERT INTO `property_rules` (`properties_id`, `rules_id`) VALUES
+INSERT INTO `property_rules` (`property_id`, `rules_id`) VALUES
 (9, 1),
 (9, 2),
 (10, 1),
-(10, 2);
+(10, 2),
+(19, 0),
+(19, 0);
 
 -- --------------------------------------------------------
 
@@ -427,7 +445,7 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `property_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `property_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `rules`
