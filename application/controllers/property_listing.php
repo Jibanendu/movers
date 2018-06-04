@@ -45,7 +45,43 @@ class Property_Listing extends CI_Controller {
             $propertyAddObject->available_from=$availablefrom;
 
             $propertyAddObject->save();
-            
+
+            $id= Property::last()->property_id;
+
+            $selectAmenities=$this->input->post('amenities');
+            $selectRules=$this->input->post('rules');
+            $selectBills=$this->input->post('bills');
+            //var_dump($selectAmenities);
+
+            //creating amenties_property map
+            foreach($selectAmenities as $amenities)
+            {
+                $propertyAmentiesObject = new AmenitiesProperty();
+                $propertyAmentiesObject->property_id=$id;
+                $propertyAmentiesObject->amenities_id=$amenities;
+                $propertyAmentiesObject->save();
+            }
+
+            //creating rules_property map
+            foreach($selectRules as $rules)
+            {
+                $propertyRulesObject = new RulesProperty();
+                $propertyRulesObject->property_id=$id;
+                $propertyRulesObject->rules_id=$rules;
+                $propertyRulesObject->save();
+            }
+
+            //creating rules_property map
+            foreach($selectBills as $bills)
+            {
+                $propertyBillsObject = new BillsProperty();
+                $propertyBillsObject->property_id=$id;
+                $propertyBillsObject->bills_id=$bills;
+                $propertyBillsObject->save();
+            }
+            redirect(base_url('index.php/property_listing/add_property'));
+
+
         }
     }
 	

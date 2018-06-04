@@ -143,7 +143,7 @@
                                             $amenitiesId= $amenities->amenities_id;
                                             ?>
 
-                                                <input type="checkbox" name="amenities[]" name ="<?php echo($amenitiesId) ?>" value="<?php echo($amenitiesFound) ?>"><?php echo($amenitiesFound) ?>
+                                                <input type="checkbox" name="amenities[]" value="<?php echo($amenitiesId) ?>"><?php echo($amenitiesFound) ?>
                                          <?php
                                         }
                                              ?>
@@ -164,7 +164,7 @@
                                                     $rulesId= $rules->rule_id;
                                                     ?>
 
-                                                    <input type="checkbox" name="rules[]" name ="<?php echo($rulesId) ?>" value="<?php echo($rulesFound) ?>"><?php echo($rulesFound) ?>
+                                                    <input type="checkbox" name="rules[]" value="<?php echo($rulesFound) ?>"><?php echo($rulesFound) ?>
                                                     <?php
                                                 }
                                                 ?>
@@ -184,7 +184,7 @@
                                                     $billsId= $bills->bill_id;
                                                     ?>
 
-                                                    <input type="checkbox" name="bills[]" name ="<?php echo($billsId) ?>" value="<?php echo($billsFound) ?>"><?php echo($billsFound) ?>
+                                                    <input type="checkbox" name="bills[]"  value="<?php echo($billsFound) ?>"><?php echo($billsFound) ?>
                                                     <?php
                                                 }
                                                 ?>
