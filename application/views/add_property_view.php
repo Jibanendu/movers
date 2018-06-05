@@ -129,6 +129,15 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Upload Featured Image<span class="required">
+                                            * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                        <input name="product_image" id="product_image" type="file">
+
+                                        <input type="hidden" id="filepath" name="filepath">
+                                            </div> </div>
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Amenities <span class="required">
@@ -208,12 +217,46 @@
 <!-- END CONTENT -->
 <?php include('header/footer.php'); ?>
 <script src="<?php echo base_url(); ?>resources/assets/global/scripts/jquery.form-validator.min.js"></script>
+<script src="<?php echo base_url(); ?>resources/assets/global/scripts/jquery.ajaxfileupload.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     
     
     $.validate({
     lang: 'es'
   });
-    
+
+
+    var basepath = '<?php echo base_url(); ?>';
+
+    $('#product_image').ajaxfileupload({
+
+        'action': basepath+'index.php/property_listing/ajax_product_img',
+        'params': {
+            'extra': 'info'
+        },
+        'onComplete': function(response) {
+            console.log('Uploaded successfully');
+            if(JSON.stringify(response.status))
+            {
+                alert(JSON.stringify(response.message));return false;
+            }
+            else
+            {
+                $('#filepath').val(response);
+            }
+
+        },
+        'onStart': function() {
+            // jQuery('#progressbar').show();
+        },
+        'onCancel': function() {
+            console.log('no file selected');
+            //jQuery('#progressbar').hide();
+        },
+        validate_extensions : true,
+        valid_extensions : ['jpeg','jpg','png']
+    });
+
     
 </script>

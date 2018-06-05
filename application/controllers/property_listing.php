@@ -17,6 +17,18 @@ class Property_Listing extends CI_Controller {
 	{
 
 	}
+
+    function ajax_product_img()
+    {
+        //echo 'Working!'; die();
+        $jsonstr = $_FILES['product_image'];
+        $filename = str_replace(" ","_",$jsonstr["name"]);
+        $rand = rand(100000, 999999);
+        $org_file = "gallery/products/ajax_product_img/" . $rand . $filename;
+        move_uploaded_file($jsonstr["tmp_name"], $org_file);
+        echo base_url().$org_file;
+        exit;
+    }
     
     function add_property()
     {
@@ -34,6 +46,7 @@ class Property_Listing extends CI_Controller {
             $minimumstay = $this->input->post('minimum_stay');
             $addedon = $this->input->post('added_on');
             $availablefrom = $this->input->post('available_from');
+            $filePath= $this->input->post('filepath');
 
             $propertyAddObject = new Property();
             $propertyAddObject->property_name=$propertyName;
@@ -43,7 +56,7 @@ class Property_Listing extends CI_Controller {
             $propertyAddObject->minimum_stay=$minimumstay;
             $propertyAddObject->added_on=$addedon;
             $propertyAddObject->available_from=$availablefrom;
-
+            $propertyAddObject->property_featured_image=$filePath;
             $propertyAddObject->save();
 
             $id= Property::last()->property_id;
@@ -79,8 +92,7 @@ class Property_Listing extends CI_Controller {
                 $propertyBillsObject->bills_id=$bills;
                 $propertyBillsObject->save();
             }
-            redirect(base_url('index.php/property_listing/add_property'));
-
+            //redirect(base_url('index.php/property_listing/add_property'));
 
         }
     }
