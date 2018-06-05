@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 04, 2018 at 11:42 AM
+-- Generation Time: Jun 05, 2018 at 09:49 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -161,14 +161,14 @@ CREATE TABLE `property` (
   `added_on` date NOT NULL,
   `available_from` date NOT NULL,
   `description` text NOT NULL,
-  `property_image` varchar(10000) NOT NULL
+  `property_featured_image` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `property`
 --
 
-INSERT INTO `property` (`property_id`, `property_name`, `type`, `floor`, `minimum_stay`, `added_on`, `available_from`, `description`, `property_image`) VALUES
+INSERT INTO `property` (`property_id`, `property_name`, `type`, `floor`, `minimum_stay`, `added_on`, `available_from`, `description`, `property_featured_image`) VALUES
 (1, 'lhjajkshdjkad', 'Apartment', '1', 6, '2015-05-03', '1986-05-03', 'sbdfjkhdsjkfhkjldshfjkldshfjk', ''),
 (2, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
 (3, 'qseqwqwe', 'Apartment', '12', 6, '2018-05-03', '2012-05-03', 'sdadjasdjas', ''),
@@ -187,7 +187,22 @@ INSERT INTO `property` (`property_id`, `property_name`, `type`, `floor`, `minimu
 (16, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
 (17, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
 (18, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
-(19, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', '');
+(19, 'test_property', 's', '2', 3, '2019-01-01', '2018-02-01', '', ''),
+(20, 'test_pic', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(21, 'test_pic1', 'Studio', '2', 6, '2018-01-01', '2019-01-01', '', ''),
+(22, 'test_pic1', 'Studio', '2', 6, '2018-01-01', '2019-01-01', '', ''),
+(23, 'TESTPic2', 'Studio', '1', 6, '2019-01-01', '2019-01-01', '', ''),
+(24, 'dfsf', 'Studio', '2', 6, '2018-01-01', '2180-01-01', '', ''),
+(25, 'test_pic3', 'Studio', '2', 6, '2018-01-01', '2019-01-01', '', ''),
+(26, 'test_pic3', 'Studio', '2', 6, '2018-01-01', '2019-01-01', '', ''),
+(27, 'fdfgdg', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(28, 'fdfgdg', 'Studio', '2', 6, '2018-01-01', '2018-01-01', '', ''),
+(29, 'asdsad', 'asd', '1', 6, '2018-01-01', '2018-01-01', '', ''),
+(30, 'Doe2', 'Studio', '2', 6, '2018-01-01', '2019-01-01', '', ''),
+(31, 'asdsa', 'Studio', '2', 5, '0001-01-01', '0001-01-01', '', ''),
+(32, 'asdsa', 'Studio', '2', 5, '0001-01-01', '0001-01-01', '', ''),
+(33, 'sadad', 'a', '2', 6, '0001-01-01', '0001-01-01', '', ''),
+(34, 'asdas', 'asdas', '2', 6, '0010-01-01', '0001-01-01', '', '');
 
 -- --------------------------------------------------------
 
@@ -253,7 +268,40 @@ INSERT INTO `property_amenities` (`property_id`, `amenities_id`) VALUES
 (19, 1),
 (19, 2),
 (19, 3),
-(19, 4);
+(19, 4),
+(20, 1),
+(20, 2),
+(20, 3),
+(21, 1),
+(21, 2),
+(21, 3),
+(22, 1),
+(22, 2),
+(22, 3),
+(23, 1),
+(23, 2),
+(24, 1),
+(24, 2),
+(25, 1),
+(25, 2),
+(26, 1),
+(26, 2),
+(27, 1),
+(27, 2),
+(27, 3),
+(28, 1),
+(28, 2),
+(28, 3),
+(29, 1),
+(29, 2),
+(30, 1),
+(30, 2),
+(31, 1),
+(31, 2),
+(32, 1),
+(32, 2),
+(33, 1),
+(33, 2);
 
 -- --------------------------------------------------------
 
@@ -277,7 +325,36 @@ INSERT INTO `property_bills` (`property_id`, `bills_id`) VALUES
 (10, 0),
 (19, 0),
 (19, 0),
-(19, 0);
+(19, 0),
+(20, 0),
+(20, 0),
+(20, 0),
+(21, 0),
+(21, 0),
+(21, 0),
+(22, 0),
+(22, 0),
+(22, 0),
+(23, 0),
+(23, 0),
+(24, 0),
+(24, 0),
+(25, 0),
+(25, 0),
+(26, 0),
+(26, 0),
+(27, 0),
+(27, 0),
+(28, 0),
+(28, 0),
+(29, 0),
+(29, 0),
+(30, 0),
+(30, 0),
+(31, 0),
+(32, 0),
+(33, 0),
+(33, 0);
 
 -- --------------------------------------------------------
 
@@ -300,7 +377,33 @@ INSERT INTO `property_rules` (`property_id`, `rules_id`) VALUES
 (10, 1),
 (10, 2),
 (19, 0),
-(19, 0);
+(19, 0),
+(20, 0),
+(20, 0),
+(21, 0),
+(21, 0),
+(22, 0),
+(22, 0),
+(23, 0),
+(23, 0),
+(24, 0),
+(24, 0),
+(25, 0),
+(25, 0),
+(26, 0),
+(26, 0),
+(27, 0),
+(27, 0),
+(28, 0),
+(28, 0),
+(29, 0),
+(29, 0),
+(30, 0),
+(30, 0),
+(31, 0),
+(32, 0),
+(33, 0),
+(33, 0);
 
 -- --------------------------------------------------------
 
@@ -321,6 +424,28 @@ CREATE TABLE `rules` (
 INSERT INTO `rules` (`rule_id`, `values`, `description`) VALUES
 (1, 'No Pets', ''),
 (2, 'No Smoking', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonial`
+--
+
+CREATE TABLE `testimonial` (
+  `testimonial_id` int(11) NOT NULL,
+  `testimonial_desc` text NOT NULL,
+  `status` int(11) NOT NULL,
+  `client_name` varchar(100) NOT NULL,
+  `client_location` varchar(100) NOT NULL,
+  `client_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `testimonial`
+--
+
+INSERT INTO `testimonial` (`testimonial_id`, `testimonial_desc`, `status`, `client_name`, `client_location`, `client_image`) VALUES
+(1, 'Amazing Website', 1, 'Captain America', 'USA', '');
 
 -- --------------------------------------------------------
 
@@ -402,6 +527,12 @@ ALTER TABLE `rules`
   ADD PRIMARY KEY (`rule_id`);
 
 --
+-- Indexes for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD PRIMARY KEY (`testimonial_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -445,13 +576,19 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `property_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `property_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `rules`
 --
 ALTER TABLE `rules`
   MODIFY `rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
